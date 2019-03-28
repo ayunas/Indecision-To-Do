@@ -31,6 +31,8 @@ const removeAll = () => {
 const makeDecision = () => {
   const randNum = Math.floor(Math.random() * app.todos.length);
   console.log(randNum);
+  const option = app.todos[randNum];
+  alert(option);
 };
 
 const numbers = [1, 2, 3, 4];
