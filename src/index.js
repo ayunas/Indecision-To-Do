@@ -39,7 +39,17 @@ const makeDecision = () => {
   }
 };
 
-const numbers = [1, 2, 3, 4];
+const complete = () => {
+  console.log("the todo has been completed");
+};
+
+let visibility = true;
+const visibilityToggle = () => {
+  visibility = !visibility;
+  console.log("visibility has been toggled!", visibility);
+  renderTemplate();
+};
+
 const renderTemplate = () => {
   const template = (
     <div>
@@ -51,9 +61,13 @@ const renderTemplate = () => {
         <input type="text" name="todo" />
         <button>Add</button>
       </form>
+      <button onClick={visibilityToggle}>
+        {visibility ? "hide todos" : "show todos"}
+      </button>
+      {visibility && <p>testing visibility</p>}
       <ol>
         {app.todos.map(todo => (
-          <li>{todo}</li>
+          <li onClick={complete}>{todo}</li>
         ))}
       </ol>
       <button onClick={removeAll}>Remove All</button>
