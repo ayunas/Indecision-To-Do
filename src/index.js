@@ -25,6 +25,7 @@ const renderTemplate = () => {
   const template = (
     <div>
       <h1>Indecision - ToDo</h1>
+      <p>{app.todos.length > 0 ? "Todos:" : ""}</p>
       <p>{app.todos.length}</p>
       <form onSubmit={addTodo}>
         <input type="text" name="todo" />
