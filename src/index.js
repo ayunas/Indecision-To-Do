@@ -64,12 +64,14 @@ const renderTemplate = () => {
       <button onClick={visibilityToggle}>
         {visibility ? "hide todos" : "show todos"}
       </button>
-      {visibility && <p>testing visibility</p>}
-      <ol>
-        {app.todos.map(todo => (
-          <li onClick={complete}>{todo}</li>
-        ))}
-      </ol>
+      {visibility && (
+        <ol>
+          {app.todos.map(todo => (
+            <li onClick={complete}>{todo}</li>
+          ))}
+        </ol>
+      )}
+
       <button onClick={removeAll}>Remove All</button>
     </div>
   );
