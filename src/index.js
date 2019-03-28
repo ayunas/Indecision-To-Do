@@ -15,10 +15,17 @@ const addTodo = e => {
   console.log(e.target.elements.todo.value);
 
   if (todo) {
-    console.log(todo.value);
-    app.todos.push(todo.value);
+    console.log(todo);
+    app.todos.push(todo);
     renderTemplate();
+    console.log(app.todos);
   }
+};
+
+const removeAll = () => {
+  app.todos = [];
+  renderTemplate();
+  console.log(app.todos);
 };
 
 const renderTemplate = () => {
@@ -31,6 +38,7 @@ const renderTemplate = () => {
         <input type="text" name="todo" />
         <button>Add</button>
       </form>
+      <button onClick={removeAll}>Remove All</button>
     </div>
   );
   ReactDOM.render(template, rootElement);
