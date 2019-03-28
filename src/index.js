@@ -32,7 +32,11 @@ const makeDecision = () => {
   const randNum = Math.floor(Math.random() * app.todos.length);
   console.log(randNum);
   const option = app.todos[randNum];
-  alert(option);
+  if (app.todos.length > 0) {
+    alert(option);
+  } else {
+    alert("You have no todos. Add some now!");
+  }
 };
 
 const numbers = [1, 2, 3, 4];
